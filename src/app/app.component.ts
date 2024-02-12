@@ -40,6 +40,7 @@ export class AppComponent {
     updatedData = this.getData.filter((word:any) => word !== updatedData);
     localStorage.setItem("toDo",JSON.stringify(updatedData));
     console.log("updatedData : ", updatedData );
+    console.log("hello ");
   }
   edit(value:string,id:number){
     this.getData[id]=value;
