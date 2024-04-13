@@ -1,0 +1,26 @@
+.custom-container {
+    max-width: 600px;
+    margin: 100px auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    text-align: center; 
+    background-color: #fff; 
+  }
+
+.show-todo-container{
+    position : relative;
+
+    .export-json{
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+
+    .show-todo{
+      cursor: pointer;
+    }
+
+    .btn{
+      width: 75px;
+    }
+  }

@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="custom-container input-todo-container">
+
+        <h3 style="margin-bottom: 30px;" class="text-secondary">To Do List</h3>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Add todo..." [(ngModel)]="addTodo"
+            (keyup)="validation()">
+          <div class="input-group-append">
+            <button class="btn btn-success" type="button" [disabled]="isDisable" (click)="add()">ADD</button>
+          </div>
+        </div>
+
+        <!-- <button class="btn import-json text-white" [class]="!isToggleImport ? 'btn-info' : 'btn-danger' "
+          (click)="toggleImport()">
+          {{ isToggleImport ? "Cancel" : "Import" }} </button> -->
+        <div class="mb-3" *ngIf="isToggleImport">
+          <!-- <label for="formFile" class="form-label">Default file input example</label> -->
+          <input class="form-control" type="file" id="formFile" (change)="importTodoList($event)">
+        </div>
+        <div *ngIf="isSusscessImport && !isWarningImport && !isDangerImport" class="alert alert-success" role="alert">
+          Tasks added successfully...
+        </div>
+        <div *ngIf="isWarningImport" class="alert alert-warning" role="alert">
+          Some tasks not added as there is no tasks with key "item".
+        </div>
+        <div *ngIf="isDangerImport" class="alert alert-danger" role="alert">
+          Tasks not added as there is no tasks with key "item".
+        </div>
+      </div>
+
+      <!-- <div class="custom-container show-todo-container" *ngIf="getData$ | async as getData">
+        <h3 style="margin-bottom: 30px;" class="text-secondary">Your List</h3>
+        <button class="btn btn-info export-json text-white" (click)="exportTodoList()">Export</button>
+        <div class="input-group mb-3" *ngFor="let data of getData">
+          <input type="text" class="form-control show-todo" [value]="data.item" #editedValue [readonly]="!isEdit">
+          <div class="input-group-append">
+            <button *ngIf="!isEdit" class="btn btn-primary me-2" type="button" (click)="onEdit(data.id)">Edit</button>
+            <button *ngIf="isEdit" class="btn btn-success me-2" type="button"
+              (click)="edit(editedValue.value,data.id)">Done</button>
+            <button *ngIf="isEdit" class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+            <button *ngIf="!isEdit" class="btn btn-danger" type="button" (click)="delete(data.id)">Delete</button>
+          </div>
+        </div>
+      </div> -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.container-fluid{
+    max-width: 800px;
+    margin: 100px auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    text-align: center; 
+    background-color: #fff; 
+    position: relative;
+    i{
+        font-size: 30px;
+        position: absolute;
+        cursor: pointer;
+        top: 25px;
+        left: 25px;
+    }
+}

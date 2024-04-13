@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <i class="fa-regular fa-circle-left text-secondary" [routerLink]="['..']"></i>
+    <h3 class="text-center text-secondary mb-3">Task</h3>
+    <input class="form-control mt-4 mb-4" type="text" [(ngModel)]="selectedTask" (keyup)="validation()">
+    <div class="row text-center">
+        <div class="col-sm">
+            <button class="btn btn-success" (click)="save()" [disabled]="disableSave">Save</button>
+        </div>
+        <div class="col-sm">
+            <button class="btn btn-danger" (click)="delete()" >Delete</button>
+        </div>
+    </div>
+</div>

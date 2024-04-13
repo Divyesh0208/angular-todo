@@ -1,0 +1,14 @@
+<div class="custom-container show-todo-container" *ngIf="getData$ | async as getData"> <!--showBox-->
+    <h3 style="margin-bottom: 30px;" class="text-secondary">Your List</h3>
+    <!-- <button class="btn btn-info export-json text-white" (click)="exportTodoList()">Export</button> -->
+    <div class="input-group mb-3" *ngFor="let data of getData">
+      <input type="text" class="form-control show-todo" [value]="data.item" [routerLink]="[data.id]" readonly>
+      <!-- <div class="input-group-append">
+        <button *ngIf="!isEdit" class="btn btn-primary me-2" type="button" (click)="onEdit()">Edit</button>
+        <button *ngIf="isEdit" class="btn btn-success me-2" type="button"
+          (click)="edit(editedValue.value,data.id)">Done</button>
+        <button *ngIf="isEdit" class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+        <button *ngIf="!isEdit" class="btn btn-danger" type="button" (click)="delete(data.id)">Delete</button>
+      </div> -->
+    </div>
+  </div>
